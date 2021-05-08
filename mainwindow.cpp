@@ -187,7 +187,7 @@ bool MainWindow::loadConfig(QString file)
     }
     QJsonObject networkObj = configJsonObj["network"].toObject();
 
-    QString ip = networkObj["ip"].toString();
+    QString ip = networkObj["ipaddr"].toString();
     int port = networkObj["port"].toInt();
     ui->ipaddr->setText(ip);
     ui->lineEditPort->setText(QString::number(port));
