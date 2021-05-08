@@ -2,6 +2,7 @@
 #define DISPLAYDIALOG_H
 
 #include <QDialog>
+#include <QTimer>
 #include "global.h"
 #include "canvas.h"
 
@@ -16,9 +17,13 @@ signals:
 
 private:
     Canvas*     m_pCanvas;
+    QTimer*     m_pTimer;
+    int         m_nFrames;
+    QString     m_fps;
 
 public slots:
     void    display(cv::Mat);
+    void    onTimer();
 };
 
 #endif // DISPLAYDIALOG_H
